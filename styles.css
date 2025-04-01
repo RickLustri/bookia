@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Goudy Bookletter 1911", serif;
+  display: grid;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  color: #fff;
+
+  grid-template-columns: 300px auto;
+  grid-template-rows: 71px auto auto;
+  grid-template-areas:
+    "header main"
+    "article main"
+    "article main";
+}
+
+header {
+  grid-area: header;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #424242;
+  width: 100%;
+  height: 70px;
+
+  border-radius: 0px 0px 10px 0px;
+
+  & .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 0px 10px;
+
+    & img {
+      width: 60px;
+      filter: drop-shadow(1px 1px 1px #000);
+    }
+
+    & p {
+      font-family: "Kanit", sans-serif;
+      font-size: 27px;
+      font-weight: 600;
+      margin: 0px 0px 0px 5px;
+      color: #ffffff;
+      filter: drop-shadow(1px 1px 1px #000);
+    }
+
+    & small {
+      font-size: 23px;
+    }
+
+    & hr {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #fff, transparent);
+      margin-left: 5px;
+      margin-top: -5px;
+      border: none;
+      border-radius: 25px;
+    }
+  }
+}
+
+article {
+  grid-area: article;
+  background-color: #424242;
+  width: 100%;
+  height: auto;
+  padding: 10px 5px 0px 5px;
+  border-radius: 0px 10px 0px 0px;
+
+  & article {
+    margin-bottom: 10px;
+    height: 30%;
+
+    & h2 {
+      font-family: "Kanit", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0px 0px 0px 5px;
+      color: #ffffff;
+    }
+
+    & hr {
+      width: 90%;
+      height: 2px;
+      background: linear-gradient(to right, #fff, transparent);
+      border: none;
+      border-radius: 25px;
+    }
+
+    & ul {
+      list-style-type: none;
+      margin: 10px 0px 0px 5px;
+
+
+      & li {
+        margin-top: 5px;
+        transition: 0.03s ease-in-out;
+
+        & a {
+          margin: 0px 0px 0px 5px;
+          text-decoration: none;
+          color: #fff;
+          font-weight: 200;
+          transition: 0.03s ease-in-out;
+        }
+      }
+
+      & li:hover,
+      a:hover {
+        color: #000;
+        width: 90%;
+        background: linear-gradient(to right, #fff, transparent);
+        transform: scale(1.03);
+        transition: 0.03s ease-in-out;
+      }
+    }
+
+  }
+}
+
+main {
+  grid-area: main;
+
+  display: grid;
+  height: 100vh;
+
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 260px 80px auto;
+  grid-template-areas:
+    "logo logo logo"
+    "procura procura procura"
+    "recomendados recomendados recomendados";
+
+  background-color: #424242;
+  margin: 0px 0px 0px 1px;
+
+  & .logo {
+    grid-area: logo;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & img {
+      width: 200px;
+      opacity: 0.2;
+      filter: saturate(0.0);
+      height: auto;
+    }
+
+    & p {
+      font-family: "Kanit", sans-serif;
+      font-size: 30px;
+      font-weight: 600;
+      opacity: 0.2;
+      margin-top: -15px;
+      color: #ffffff;
+    }
+  }
+
+  & .procura {
+    grid-area: procura;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & form {
+      height: 70px;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & input {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        border: 1px solid #fff;
+        border-radius: 15px;
+        padding: 0px 0px 0px 10px;
+        font-family: "Kanit", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      & input:focus {
+        outline: none;
+        color: #fff;
+        font-weight: 200;
+      }
+
+    }
+  }
+
+  & .recomendados {
+    grid-area: recomendados;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+    overflow: hidden;
+
+    & h2 {
+      font-size: 30px;
+      font-weight: 600;
+      margin: 0px 0px 0px 5px;
+      color: #ffffff;
+    }
+
+    & hr {
+      width: 95%;
+    }
+
+    & .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      overflow-y: scroll;
+
+      & .cards {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        background-color: #424242;
+        width: 80%;
+        border: 1px solid #fff;
+        padding: 10px;
+        margin: 15px 0px 15px 0px;
+
+        & .row1 {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 5px;
+
+          & h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #ffffff;
+          }
+        }
+
+        & hr {
+          width: 100%;
+        }
+
+        & span {
+          display: flex;
+          flex-direction: column;
+          margin: 10px 0px 0px 5px;
+          font-size: 18px;
+          font-weight: 600;
+
+          & p {
+            margin: 0px 0px 0px 5px;
+            color: #ffffff;
+            font-weight: 200;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
